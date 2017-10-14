@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Question from "./Question";
-import QuestionCount from "./QuestionCount";
+import StarRating from "./StarRating"
 import AnswerOption from "./AnswerOption";
 import { connect } from "react-redux";
 import { getNextQuestion } from "../actions";
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
 class Quiz extends Component {
   renderAnswerOptions(answer) {
@@ -17,16 +17,22 @@ class Quiz extends Component {
   render() {
     const { questionIndex } = this.props.quiz;
     const { question, answers } = this.props.questions[questionIndex];
-    const totalQuestions = this.props.questions.length;
     return (
-      <div className="quiz">
-        <QuestionCount index = {questionIndex} total={totalQuestions} />
-        <Question content={question} />
-        <ul className="answerOptions">
-          {answers.map(this.renderAnswerOptions)}
-        </ul>
-        <button onClick={this.handleAnswerSelected.bind(this)}>Next</button>
-      </div>
+      <ReactCSSTransitionGroup
+        className="container"
+        component="div"
+        transitionName="fade"
+        transitionEnterTimeout={800}
+        transitionLeaveTimeout={500}
+        transitionAppear
+        transitionAppearTimeout={500}
+      >
+        <div className="quiz">
+          <Question content={question} />
+          <StarRating />
+          <button onClick={this.handleAnswerSelected.bind(this)}>Next</button>
+        </div>
+      </ReactCSSTransitionGroup>
     );
   }
 }

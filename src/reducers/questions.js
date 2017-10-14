@@ -1,6 +1,6 @@
 const initialState = [
   {
-    question: "What franchise would you rather play a game from?",
+    question: "How do you feel today?",
     answers: [
       {
         type: "Microsoft",
