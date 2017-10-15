@@ -7,15 +7,23 @@ import Intro from "./Intro";
 import { connect } from "react-redux";
 import mighty_bear from "../images/mighty_bear.png";
 import bird_and_bear from "../images/bird_and_bear.png";
+import { getNextQuestion } from "../actions";
 class App extends Component {
-  render() {
+  renderContent() {
     const { questionIndex } = this.props.quiz;
-    const totalQuestions = this.props.questions.length;
+    switch (questionIndex) {
+      case -1:
+        return <Intro handleStart = {this.props.getNextQuestion} />;
+      default:
+        return <Quiz />;
+    }
+  }
+  render() {
     return (
       <div className="app">
-        <Header index={questionIndex} total={totalQuestions} />
+        <Header />
         <div className="container--main container-fluid">
-          <Intro />
+          {this.renderContent()}
         </div>
         <Footer />
       </div>
@@ -29,4 +37,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, { getNextQuestion })(App);

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import Question from "./Question";
-import StarRating from "./StarRating"
-import AnswerOption from "./AnswerOption";
+import StarRating from "./StarRating";
+import RangeInput from "./RangeInput";
 import { connect } from "react-redux";
 import { getNextQuestion } from "../actions";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
@@ -14,12 +13,21 @@ class Quiz extends Component {
     const nextQuestionIndex = this.props.quiz.questionIndex + 1;
     this.props.getNextQuestion(nextQuestionIndex);
   }
+  renderAnswer() {
+    const { questionIndex } = this.props.quiz;
+    const { question, type } = this.props.questions[questionIndex];
+    console.log();
+    if (type === "StarRating") return <StarRating />;
+    else {
+      return <RangeInput />;
+    }
+  }
   render() {
     const { questionIndex } = this.props.quiz;
     const { question, answers } = this.props.questions[questionIndex];
     return (
       <ReactCSSTransitionGroup
-        className="container"
+        className="container-fluid"
         component="div"
         transitionName="fade"
         transitionEnterTimeout={800}
@@ -28,9 +36,14 @@ class Quiz extends Component {
         transitionAppearTimeout={500}
       >
         <div className="quiz">
-          <Question content={question} />
-          <StarRating />
-          <button onClick={this.handleAnswerSelected.bind(this)}>Next</button>
+          <div className="question">{question}</div>
+          {this.renderAnswer()}
+          <button
+            className="mighty__button"
+            onClick={this.handleAnswerSelected.bind(this)}
+          >
+            <span>Next Question</span>
+          </button>
         </div>
       </ReactCSSTransitionGroup>
     );

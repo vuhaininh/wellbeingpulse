@@ -7,12 +7,7 @@ export default function(props) {
       <div className="site-logo">
         <img className="img-fluid" src={logo} alt="Mightifier" />
       </div>
-      <div className="survey-name">
-        Wellbeing Pulse
-      </div>
-      <div className="question-count">
-        {index + 1} / {total}
-      </div>
+      <div className="survey-name">Wellbeing Pulse</div>
     </header>
   );
 }

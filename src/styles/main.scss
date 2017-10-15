@@ -28,15 +28,7 @@ body {
     top: 10px;
   }
 }
-.question-count {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  @media only screen and (min-width: 700px) {
-    font-size: 25px;
-    top: 15px;
-  }
-}
+
 .survey-name {
   position: absolute;
   top: 25px;
@@ -68,16 +60,16 @@ body {
 .intro {
   text-align: center;
 }
-.intro .title{
+.intro .title {
   margin: 20px;
 }
-.intro .guidelines{
+.intro .guidelines {
   margin-top: 20px;
   font-size: 18px;
 }
 .mighty__button {
   border-radius: 20px;
-  background-color: #f45059;
+  background-color: #0090f1;
   border: none;
   color: #ffffff;
   text-align: center;
@@ -121,8 +113,64 @@ body {
   }
 }
 @media only screen and (min-width: 700px) {
-  .intro .title{
+  .intro .title {
     font-size: 42px;
     margin: 25px;
   }
+}
+.quiz {
+  text-align: center;
+}
+.question {
+  margin: 80px 20px 20px 20px;
+  font-size: 20px;
+
+  @media only screen and (min-width: 700px) {
+    font-size: 42px;
+    margin: 30px;
+  }
+}
+.star-rating {
+  margin-bottom: 25px;
+  font-size: 50px;
+  color: #ccc;
+  @media only screen and (min-width: 700px) {
+    font-size: 60px;
+  }
+}
+.star-rating a {
+  margin-left: 10px;
+}
+.star-rating .rating__guide {
+  font-size: 16px;
+  color: #f36251;
+}
+.range-input{
+  width: 250px;
+  margin: 35px auto;
+
+}
+.input-range__track {
+  height: 0.9rem;
+}
+.input-range__slider {
+    appearance: none;
+    background: #3f51b5;
+    border: 1px solid #3f51b5;
+    border-radius: 100%;
+    cursor: pointer;
+    display: block;
+    height: 2rem;
+    width: 2rem;
+    margin-left: -0.5rem;
+    margin-top: -1.45rem;
+    outline: none;
+    position: absolute;
+    top: 50%;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+.input-range__label--value {
+    position: absolute;
+    top: -3rem;
+    font-size: 1.2rem;
 }

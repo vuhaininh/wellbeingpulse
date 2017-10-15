@@ -1,19 +1,19 @@
 import React, { Component } from "react";
-
+import Rater from "./Rater";
 class StarRating extends Component {
+  constructor(props) {
+    super(props);
+    console.log("hehe");
+    this.state = {
+      message: "Please rate by choosing stars from 1 to 5"
+    };
+  }
+
   render() {
     return (
-      <div className="rating-wrapper">
-         <input type="radio" className="rating-input" id="rating-input-1-5" name="rating-input-1"/>
-         <label htmlFor="rating-input-1-5" className="rating-star"></label>
-         <input type="radio" className="rating-input" id="rating-input-1-4" name="rating-input-1"/>
-         <label htmlFor="rating-input-1-4" className="rating-star"></label>
-         <input type="radio" className="rating-input" id="rating-input-1-3" name="rating-input-1"/>
-         <label htmlFor="rating-input-1-3" className="rating-star"></label>
-         <input type="radio" className="rating-input" id="rating-input-1-2" name="rating-input-1"/>
-         <label htmlFor="rating-input-1-2" className="rating-star"></label>
-         <input type="radio" className="rating-input" id="rating-input-1-1" name="rating-input-1"/>
-         <label htmlFor="rating-input-1-1" className="rating-star"></label>
+      <div className="star-rating">
+        <Rater />
+        <div className="rating__guide">{this.state.message}</div>
       </div>
     );
   }

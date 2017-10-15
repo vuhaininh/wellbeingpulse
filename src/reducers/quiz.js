@@ -1,7 +1,7 @@
 import { GET_NEXT_QUESTION } from "../constants/actionTypes";
 
 const initialState = {
-  questionIndex: 0
+  questionIndex: -1
 };
 export default function(state = initialState, action) {
   switch (action.type) {
