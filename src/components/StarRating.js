@@ -3,7 +3,6 @@ import Rater from "./Rater";
 class StarRating extends Component {
   constructor(props) {
     super(props);
-    console.log("hehe");
     this.state = {
       message: "Please rate by choosing stars from 1 to 5"
     };

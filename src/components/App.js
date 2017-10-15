@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../styles/main.scss";
 import Quiz from "./Quiz";
+import Ending from "./Ending";
 import Header from "./Header";
 import Footer from "./Footer";
 import Intro from "./Intro";
@@ -11,6 +12,8 @@ import { getNextQuestion } from "../actions";
 class App extends Component {
   renderContent() {
     const { questionIndex } = this.props.quiz;
+    if(questionIndex === this.props.questions.length)
+    return <Ending />
     switch (questionIndex) {
       case -1:
         return <Intro handleStart = {this.props.getNextQuestion} />;

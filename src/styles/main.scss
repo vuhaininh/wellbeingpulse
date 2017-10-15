@@ -145,32 +145,39 @@ body {
   font-size: 16px;
   color: #f36251;
 }
-.range-input{
+.range-input {
   width: 250px;
   margin: 35px auto;
-
 }
 .input-range__track {
   height: 0.9rem;
 }
 .input-range__slider {
-    appearance: none;
-    background: #3f51b5;
-    border: 1px solid #3f51b5;
-    border-radius: 100%;
-    cursor: pointer;
-    display: block;
-    height: 2rem;
-    width: 2rem;
-    margin-left: -0.5rem;
-    margin-top: -1.45rem;
-    outline: none;
-    position: absolute;
-    top: 50%;
-    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  appearance: none;
+  background: #3f51b5;
+  border: 1px solid #3f51b5;
+  border-radius: 100%;
+  cursor: pointer;
+  display: block;
+  height: 2rem;
+  width: 2rem;
+  margin-left: -0.5rem;
+  margin-top: -1.45rem;
+  outline: none;
+  position: absolute;
+  top: 50%;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 .input-range__label--value {
-    position: absolute;
-    top: -3rem;
-    font-size: 1.2rem;
+  position: absolute;
+  top: -3rem;
+  font-size: 1.2rem;
+}
+.ending {
+  text-align: center;
+  font-size: 24px;
+  margin: 100px auto;
+}
+.ending img {
+  margin-top: 20px;
 }
